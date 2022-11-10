@@ -35,6 +35,8 @@ class ShoppingItemAdapter(
             if (currentShoppingItem.amount > 0){
                 currentShoppingItem.amount--
                 viewModel.upsert(currentShoppingItem)
+            }else{
+                viewModel.delete(currentShoppingItem)
             }
         }
     }
