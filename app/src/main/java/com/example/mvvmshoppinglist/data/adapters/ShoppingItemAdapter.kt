@@ -31,7 +31,7 @@ class ShoppingItemAdapter(
             currentShoppingItem.amount++
             viewModel.upsert(currentShoppingItem)
         }
-        holder.itemView.ivPlus.setOnClickListener {
+        holder.itemView.ivMinus.setOnClickListener {
             if (currentShoppingItem.amount > 0){
                 currentShoppingItem.amount--
                 viewModel.upsert(currentShoppingItem)

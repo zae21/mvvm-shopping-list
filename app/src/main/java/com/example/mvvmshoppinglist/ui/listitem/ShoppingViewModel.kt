@@ -10,13 +10,13 @@ import kotlinx.coroutines.launch
 class ShoppingViewModel(
     private var repository: ShoppingRepository
 ) : ViewModel() {
-    fun upsert(item: ShoppingItem) = CoroutineScope(Dispatchers.Main).launch {
+    fun upsert(item: ShoppingItem) = CoroutineScope(Dispatchers.IO).launch {
         repository.upsert(item)
     }
 
-    fun delete(item: ShoppingItem) = CoroutineScope(Dispatchers.Main).launch {
+    fun delete(item: ShoppingItem) = CoroutineScope(Dispatchers.IO).launch {
         repository.delete(item)
     }
 
-    fun getAllItems(item: ShoppingItem) = repository.getAllItems()
+    fun getAllItems() = repository.getAllItems()
 }
